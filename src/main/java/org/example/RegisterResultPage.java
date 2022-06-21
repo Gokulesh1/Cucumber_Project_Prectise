@@ -1,12 +1,17 @@
 package org.example;
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
 
-public class RegisterResultPage extends Utils{
+public class RegisterResultPage extends Utils {
 
-    public void verifyRegisterPage(){
+
+
+
+    public void verifyRegisterPage() {
         //for verification
-        Assert.assertEquals
-                ("Your registration completed", "Your registration completed", "Your registration is completed");
+        String actualMassage = driver.findElement(By.className("result")).getText();
+        String expectedMassage = "Your registration completed";
+        Assert.assertEquals(actualMassage, expectedMassage, "Your registration is not completed");
     }
 }

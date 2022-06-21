@@ -16,12 +16,13 @@ import java.time.Duration;
 import java.util.Date;
 
     public class Utils extends BasePage {
-    //Click on Element
+        private static CharSequence value;
+        //Click on Element
 
     public static void clickOnElement(By by) {driver.findElement(by).click();}
 
         //Send Text Values
-    public static void sendvalue(By by, String value)
+    public static void sendvalue(By by, String lastname, CharSequence text)
     {
         driver.findElement(by).sendKeys(value);
     }
@@ -35,8 +36,8 @@ import java.util.Date;
     }
 
     //wait for type text
-    public static void typeText(By by, String text){
-                driver.findElement(by).sendKeys(text);
+    public static void typeText(By by, String title){
+               driver.findElement(by).sendKeys();
           }
 
 
@@ -65,7 +66,7 @@ import java.util.Date;
     }
 
     //5.wait for element to be clickable
-    public static void driverWaitUntilElementToBeClickable(By by, int time) {
+    public static void driverWaitUntilElementToBeClickable(By by, long time) {
         WebDriverWait click = new WebDriverWait(driver, Duration.ofSeconds(time));
         click.until(ExpectedConditions.elementToBeClickable(by));
     }
